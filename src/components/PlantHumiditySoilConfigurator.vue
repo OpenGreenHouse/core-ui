@@ -1,7 +1,7 @@
 <template>
     <section>
-        <b-field label="Sun Hours per Day">
-            <b-slider max=24 v-model="value"></b-slider>
+        <b-field label="Relative Humidity in Soil">
+            <b-slider max=100 v-model="value"></b-slider>
         </b-field>
     </section>
 </template>
@@ -10,7 +10,7 @@
     export default {
         data() {
             return {
-                value: 5
+                value: 60
             }
         }
     }

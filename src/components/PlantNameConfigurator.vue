@@ -1,4 +1,5 @@
 <template>
+
     <b-field label="Name">
         <b-input v-model="name"></b-input>
     </b-field>
