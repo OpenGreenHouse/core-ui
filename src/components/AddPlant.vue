@@ -1,6 +1,7 @@
 <template>
     <div>
-        <!--        <button v-on:click="startConfigurationProcess">Add my first plant.</button>-->
+
+        <button v-on:click="startConfigurationProcess">Add my first plant.</button>
 
         <div class="shadow-lg" v-if="inConfiguration">
             <b-steps>
@@ -19,6 +20,10 @@
                 <b-step-item v-model="showHumidity" label="Humidity" icon="water">
                     <PlantHumiditySoilConfigurator/>
                 </b-step-item>
+
+                <b-step-item v-model="showSummary" label="Summary" icon="water">
+                    <PlantConfiguratorSummary/>
+                </b-step-item>
             </b-steps>
         </div>
     </div>
@@ -30,6 +35,7 @@
     import PlantSunHourConfigurator from './PlantSunHourConfigurator.vue'
     import PlantLuminousIntensityConfigurator from './PlantLuminousIntensityConfigurator.vue'
     import PlantHumiditySoilConfigurator from './PlantHumiditySoilConfigurator.vue'
+    import PlantConfiguratorSummary from './PlantConfiguratorSummary.vue'
 
     export default {
         name: "AddPlant",
@@ -37,15 +43,17 @@
             PlantSunHourConfigurator,
             PlantLuminousIntensityConfigurator,
             PlantHumiditySoilConfigurator,
-            PlantNameConfigurator
+            PlantNameConfigurator,
+            PlantConfiguratorSummary,
         },
         data: () => {
             return {
-                inConfiguration: true,
+                inConfiguration: false,
                 showName: true,
                 showSunHours: false,
                 showLightIntensity: false,
                 showHumidity: false,
+                showSummary: false,
             }
         },
         methods: {
